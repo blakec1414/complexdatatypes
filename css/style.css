@@ -4,17 +4,19 @@
 html,body {
 	min-height: 100vh;
 	margin: 0;
+	background-color: black;
 }
 img {
 	max-width: 100%;
-.quotes {
+ {
 }
 	color: white;
 	display: flex;
 }
 div > div {
-	width: 250px;
-	height: 250px;
+	margin: center; 
+	width: 800px;
+	height: 800px;
 	padding: 20px;
 }
 

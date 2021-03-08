@@ -3,11 +3,10 @@
 
 
 
-function Quote(quoteText, author, tags, color) {
-	this.quote = quoteText; 
-	this.author = author;
-	this.tags = tags;
-	this.color = color;                                                                                                                            
+function Image(image, title, tags) {
+	this.image = image; 
+	this.title = title;
+	this.tags = tags;                                                                                                                           
 	this.display = function() {
 
 		var container = $("<div>")
@@ -15,27 +14,34 @@ function Quote(quoteText, author, tags, color) {
 			container.addClass(tag)
 			
 		})
-		container.css("background", this.color)
 
-		var quoteString = "";
-		quoteString += "<p>" + this.quote + "</p>";
-		quoteString += "<cite>" + this.author + "</cite";
+		var imgString = "";
+		imgString += "<img src=>" + this.image + "</img>";
+		//imgString += "<cite>" + this.author + "</cite";
 
-		container.html(quoteString)
-		$(".quotes").prepend(container)
+		container.html(imgString)
+		$(".Image").prepend(container)
 	}
 
 }
 
-var quotes = [
-	new Quote('"We don\'t make mistakes, just happy little accidents."', "Bob Ross", ["painting", "mistakes"], "#0a3410"),
-	new Quote('"Creativity takes courage"', "Henry Matisse", ["painting", "creativity"] , "lightblue")
+var images1 = [
+	new Image("<img src=images/2020.png>", "2020", ["revanchist", "social-media"]),
+	new Image("<img src=images/blm.png>", "BLM", ["revanchist", "political", "social-media"]),
+	new Image("<img src=images/Deathrattle.png>", "Deathrattle", ["revanchist", "artwork"]),
+	new Image("<img src=images/drown.png>", "Drown", ["jacy", "artwork"]),
+	new Image("<img src=images/goat.jpg>", "Goat", ["revanchist", "artwork"]),
+	new Image("<img src=images/Jacy.png>", "Jacy Logo", ["jacy", "logo"]),
+	new Image("<img src=images/logo.png>", "Revanchist Logo", ["revanchist", "logo"]),
+	new Image("<img src=images/ribcaged.jpg>", "Ribcaged", ["revanchist", "artwork"]),
+	new Image("<img src=images/show.png>", "Poster", ["revanchist", "poster"]),
+	new Image("<img src=images/wicked.png>", "Wicked", ["revanchist", "artwork"])
 ]
 
 var taglist = []
-quotes.forEach(function(quote){
-	quote.display();
-	quote.tags.forEach(function(tag){
+images1.forEach(function(image){
+	image.display();
+	image.tags.forEach(function(tag){
 
 		if(!taglist.includes(tag)){
 
