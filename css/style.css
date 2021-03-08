@@ -8,13 +8,14 @@ html,body {
 }
 img {
 	max-width: 100%;
- {
 }
+
+body{
 	color: white;
 	display: flex;
 }
 div > div {
-	margin: center; 
+
 	width: 800px;
 	height: 800px;
 	padding: 20px;
